@@ -1,2 +1,2 @@
-# gulp-tamplate-master
-My base gulp Tamplate
+# Machines must suffer vinnytsiaJs
+Dev
