@@ -152,8 +152,22 @@ section.slide
 
 
 section.slide
+	h2 Настройка вывода в браузере
+
+	pre
+		code
+			|"resembleOutputOptions": {
+			|	"errorColor": {
+			|		"red": 255,
+			|		"green": 0,
+			|		"blue": 255
+			|	},
+			|	"transparency": 0.3
+			|}
+
+section.slide
 	h2 onBeforeScript, onReadyScript
-		
+
 	pre
 		code
 			|module.exports = function(casper, scenario, vp) {
