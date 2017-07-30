@@ -1,0 +1,229 @@
+section.slide.backstopjs_header
+		h2.shout BackstopJS
+
+section.slide
+	h2 BackstopJS
+	p
+		b Catch CSS curve balls.
+	p CLI инструмент для автоматизации тестирования визуальных регресий.
+
+	ul
+		li Phantom JS (Slimer JS)
+		li Resemble JS
+		li Casper JS
+
+
+section.slide
+	h2 Зачем?
+	//- p ¯_| ಠ ∧ ಠ |_/¯
+	p ლ༼ ▀̿ Ĺ̯ ▀̿ ლ༽
+
+	ul
+		li У сайта много страниц и состояний для разных устройств
+		li Большая команда и много новичков
+		li Что-то поправил Back-end разработчик
+		li Несколько файлов CSS на один сайт
+		li Один CSS файл на несколько сайтов ( и такое бывает) (o_O)
+		li Вы ведете курсы Front-End разработчиков
+
+section.slide
+	H2 Возможности
+
+	ul
+		li Можно настроить за пять минут.
+		li Имитация действий пользователя через CasperJS.
+		li Поддерживается двух движков для рендера (PhantomJS и SlimerJS)
+		li Тестирование страницы целиком или отдельных блоков
+		li Удаление или скрытие не элементов со страницы
+		li Детальные отчеты в браузере и CLI
+		li CI интеграцыя с JUnit отчетами.
+		li Возможность использовать глобально или интегрировать с npm и Gulp
+
+
+section.slide
+	h2 Использование
+
+	p 
+		mark $ npm install -g backstopjs
+		|  - установка
+	p
+		mark $ backstop genConfig
+		|  - создание базового конфига
+	p 
+		mark $ backstop reference
+		|  - создание эталонной картинки
+	p 
+		mark $ backstop test
+		|  - запуск теста
+	p 
+		mark $ backstop approve
+		|  - замена эталона тестируемой картинкой
+
+
+section.slide
+	img.cover(src="./img/bakstop_test_example.png", alt="bakstop_test_example")
+
+section.slide.backstopjs_header-sub1
+	h2.shout Настройка
+
+section.slide
+	h2(style="margin-bottom: 0 !important") backstop.json
+	pre
+		code
+			|{
+			|	"id": "prod_test",
+			|	"viewports": [...]
+			|	"scenarios": [...]
+			|	"paths": {...}
+			|	"engine": "phantomjs", //- "slimerjs"
+			|	"report": ["browser"], //- "CI"
+			|	"debug": false
+			|}
+
+section.slide
+	h2 Описываем viewports
+
+	pre
+		code
+			|"viewports": [
+			|	{
+			|		"name": "desctop_mdpi",
+			|		"width": 1280,
+			|		"height": 800
+			|	},
+			|	...
+			|]
+
+section.slide
+	h2 Описываем scenarios
+
+	pre
+		code
+			|"label": "main_page",
+			|"scenarios": [
+			|	{
+			|		"url": "website.com",
+			|		"referenceUrl": "stage.website.com",
+			|		//--
+			|		"url": "..local_folder/index.html",
+			|		...
+			|	}
+
+
+section.slide
+	h2 Описываем scenarios
+	pre
+		code
+			|	"hideSelectors": [".hide_on_test"],
+			|	"removeSelectors": [".remove_on_test"],
+			|	"selectorExpansion": true,
+			|	"selectors": [
+			|		".hero",
+			|		".portfolio",
+			|		".newsletter",
+			|	],
+
+
+section.slide
+	h2 Описываем scenarios
+	pre
+		code
+			|		"readyEvent": null, // or some event
+			|		"delay": 500,
+			|		"misMatchThreshold" : 0.1,
+			|		"requireSameDimensions" : true,
+			|		"onBeforeScript": "onBefore.js",
+			|		"onReadyScript": "onReady.js"
+			|	}
+			|]
+
+
+section.slide
+	h2 paths
+	pre
+		code
+			|"paths": {
+			|	"bitmaps_reference": "backstop/bitmaps_ref",
+			|	"bitmaps_test": "backstop/bitmaps_test",
+			|	"casper_scripts": "backstop/casper_scripts",
+			|	"html_report": "backstop/html_report",
+			|	"ci_report": "backstop/ci_report"
+			|},
+
+
+section.slide
+	h2 onBeforeScript, onReadyScript
+		
+	pre
+		code
+			|module.exports = function(casper, scenario, vp) {
+			|	// casper – Casper instance
+			|	// scenario object
+			|	// vp – viewport obj
+			|	};
+
+section.slide.backstopjs_header-sub2
+	h2.shout DEMO
+
+section.slide.backstopjs_header-sub3
+	h2.shout А еще варианты?
+
+section.slide
+	h2 Selenuim
+
+	table
+		tr
+			th(scope="row" width="35%") Поддержка браузеры
+			td Практически любой браузер
+		tr
+			th(scope="row") Настройка
+			td Долго если первый раз
+		tr
+			th(scope="row") Простота работы
+			td Написание тестов занимает достаточно большое время
+		tr
+			th(scope="row") Недостатки
+			td Сложно отследить положение и вид элементов на странице. Легко проверить что элемент есть и он работает.
+		tr
+			th(scope="row") Стоимость
+			td Бесплатно
+
+
+section.slide
+	h2 Gemini
+
+	table
+		tr
+			th(scope="row" width="35%") Поддержка браузеры
+			td Браузеры selenium’а и BrowserStack’а
+		tr
+			th(scope="row") Настройка
+			td Долго если первый раз
+		tr
+			th(scope="row") Простота работы
+			td Сложность работы с инструментом зависит от качества и сложности верстки
+		tr
+			th(scope="row") Недостатки
+			td Высокий барьер входа, некоторые глюки
+		tr
+			th(scope="row") Стоимость
+			td Бесплатно
+
+section.slide
+	h2 BrowserStack
+	table
+		tr
+			th(scope="row" width="35%") Поддержка браузеры
+			td Почти все браузеры и устройства
+		tr
+			th(scope="row") Настройка
+			td Просто и быстро
+		tr
+			th(scope="row") Простота работы
+			td Просто
+		tr
+			th(scope="row") Недостатки
+			td Денег стоит ୧( ಠ Д ಠ )୨
+		tr
+			th(scope="row") Стоимость
+			td 99$ в месяц за неограниченное количество тестов
