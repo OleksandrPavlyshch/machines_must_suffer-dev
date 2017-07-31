@@ -1,0 +1,53 @@
+section.slide
+	img.cover(src="./img/postcss_cover.jpg", alt="postcss_cover")
+
+section.slide.white.link-slide
+	h2 autoprefixer
+	img(style="max-height: 48%;" src="./img/autoprefixer.svg", alt="autoprefixer")
+	br
+	br
+	p
+		a.link-slide_link(target="_blank" href="https://github.com/postcss/autoprefixer") https://goo.gl/dxvGx6
+
+section.slide.centr-align
+	img(style="max-width: 80%;" src="./img/autoprefixer_demo.jpg", alt="autoprefixer_demo")
+	pre
+		code
+
+section.slide.white.link-slide
+	h2 cssnext
+	br
+	br
+	img(style="max-width: 80%;" src="./img/cssnext.svg", alt="cssnext")
+	br
+	br
+	br
+	p
+		a.link-slide_link(target="_blank" href="http://cssnext.io") https://goo.gl/7jjenc
+
+section.slide
+	pre
+		code
+			|@custom-selector :--button button, .button;
+			|@custom-media --small-viewport (max-width: 30em)
+			|
+			|:root {
+			|	--mainColor: red;
+			|}
+			|.foo, :--button {
+			|	background-color: gray(85);
+			|	color: color( var(--mainColor) blackness(20%));
+			|}
+
+section.slide.white.link-slide
+	h2 CSS Grace
+	img(style="max-width: 62%;" src="./img/cssgrace.gif", alt="cssgrace")
+	p
+		a.link-slide_link(target="_blank" href="https://github.com/cssdream/cssgrace") https://goo.gl/wnNZYz
+
+	
+section.slide.white.link-slide
+	h2 postcss-colorblind
+	img(style="max-width: 60%;" src="./img/postcss-colorblind.jpg", alt="postcss-colorblind")
+	p
+		a.link-slide_link(target="_blank" href="https://github.com/btholt/postcss-colorblind") https://goo.gl/vWfZYR
