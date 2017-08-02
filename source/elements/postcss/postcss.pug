@@ -104,3 +104,39 @@ section.slide.link-slide
 	p
 		a.link-slide_link(target="_blank" href="http://api.postcss.org") http://api.postcss.org
 
+section.slide
+	p Создать папку в 
+		mark node_modules
+
+	p 
+		mark postcss- Имя_плагина
+	br
+
+	p Иницыализировать её как модуль 
+	pre(style="margin-top:0;")
+		code
+			|npm init --yes
+
+	br
+	br
+	p Создать файл 
+		mark index.js
+
+section.slide
+	p Добавить в index.js 
+
+	pre
+		code
+			|var postcss = require('postcss');
+			|
+			|module.exports = postcss.plugin('mypluginName',
+			//- |
+			|	function myplugin(options) {
+			|		return function (css) {
+			|		options = options || {};
+
+			|			/*Magic*/
+
+			|		}
+
+			|});
