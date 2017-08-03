@@ -3,3 +3,47 @@ section.slide.black
 		span Google
 		| 
 		span Script
+
+section.slide.link-slide
+	br
+	img(style="max-width: 90%;" src="./img/google_script.jpg", alt="google_script")
+	p
+		a.link-slide_link(href="https://developers.google.com/apps-script/") https://goo.gl/Vw8iCF
+
+section.slide.link-slide
+	h2 Как католог видим мы
+	img(style="max-width: 80%;" src="./img/xml.jpg", alt="xml")
+
+section.slide.link-slide
+	h2 Как католог видит клиент
+	img(style="max-width: 80%;" src="./img/exel.jpg", alt="exel")
+
+section.slide.link-slide
+	h2 Tools > Script editor
+	img(style="max-width: 70%; box-shadow: 0 0 3px #000;" src="./img/google_script_tool.jpg", alt="google_script_tool")
+
+section.slide
+	br
+	br
+	br
+	pre
+		code
+			|function getData() {
+			|	var sheet = SpreadsheetApp.getActiveSheet(),
+			|	data = sheet.getDataRange().getValues();
+			|	return data;
+			|}
+
+section.slide
+	pre
+		code
+			|function onOpen() {
+			|	var ui = SpreadsheetApp.getUi();
+			|	ui.createMenu('Export Products')
+			|		.addItem('Export to XML', 'exportToXML')
+			|		.addToUi();
+			|}
+			|function exportToXML() {
+			|	var data = getData();
+			|	/*Magic*/
+			|}
