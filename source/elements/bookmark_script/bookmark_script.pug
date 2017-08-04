@@ -1,2 +1,22 @@
 section.slide
 	h2.shout Bookmarklet Script
+
+section.slide.link-slide
+	//- h2 justice.js
+	img(style="max-width: 80%;" src="./img/justice_js.jpg", alt="justice_js")
+	p
+		a.link-slide_link(href="https://okor.github.io/justice/" target="_blank") https://okor.github.io/justice/
+
+section.slide
+	h2 
+	pre
+		code
+			|javascript:(
+			|	function(){
+			|		/*You magic code*/
+			|		var $body = window.document.body;
+			|		$body.style.transition="transform 1s ease";
+			|		$body.style.transform = "scaleX(-1)"
+			|	})();
+			|)();
+
