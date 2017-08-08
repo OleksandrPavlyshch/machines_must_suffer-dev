@@ -1,2 +1,2 @@
-# Machines must suffer - vinnytsiaJs
+# Machines must suffer
 Dev
