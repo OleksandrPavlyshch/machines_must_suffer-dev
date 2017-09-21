@@ -10,3 +10,32 @@
 	+custom-header('bender_father.jpg')
 	.shout
 		top: 70%
+
+.postcss-hide_block
+	position: absolute
+	background-color: #FFF
+	left: 0
+	right: 0
+	width: 370px
+	top: 175px
+	bottom: 216px
+	margin: auto
+	visibility: visible !important
+	&.active
+		visibility: hidden !important
+	&:before
+		content: ''
+		position: absolute
+		left: 50%
+		width: 4px
+		margin-left: -4px
+		background-color: #000
+		top: 3px
+		bottom: 8px
+	&:after
+		content: ''
+		position: absolute
+		+arr(12, 8, #000, b)
+		left: 50%
+		bottom: 0
+		margin-left: -8px
