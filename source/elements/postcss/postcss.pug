@@ -13,16 +13,14 @@ section.slide.postcss_header-sub1
 
 section.slide.link-slide
 	h2 autoprefixer
-	img(style="max-height: 48%;" src="./img/autoprefixer.svg", alt="autoprefixer")
-	br
+	img(style="max-height: 55%;" src="./img/autoprefixer.svg", alt="autoprefixer")
 	br
 	p
 		a.link-slide_link(target="_blank" href="https://github.com/postcss/autoprefixer") https://goo.gl/dxvGx6
 
 section.slide.centr-align
 	img(style="max-width: 80%;" src="./img/autoprefixer_demo.jpg", alt="autoprefixer_demo")
-	pre
-		code
+
 
 section.slide.white.link-slide
 	h2 cssnext
@@ -37,21 +35,20 @@ section.slide.white.link-slide
 
 section.slide
 	pre
-		code
-			|@custom-selector :--button button, .button;
-			|@custom-media --small-viewport (max-width: 30em)
-			|
-			|:root {
-			|	--mainColor: red;
-			|}
-			|.foo, :--button {
-			|	background-color: gray(85);
-			|	color: color( var(--mainColor) blackness(20%));
-			|}
+		code @custom-selector :--button button, .button;
+		code @custom-media --small-viewport (max-width: 30em)
+		code 
+		code :root {
+		code   --mainColor: red;
+		code }
+		code .foo, :--button {
+		code   background-color: gray(85);
+		code   color: color( var(--mainColor) blackness(20%));
+		code }
 
 section.slide.link-slide
 	h2 CSS Grace
-	img(style="max-width: 62%; box-shadow: 0 0 7px #666;" src="./img/cssgrace.gif", alt="cssgrace")
+	img(style="max-width: 63%; box-shadow: 0 0 7px #666;" src="./img/cssgrace.gif", alt="cssgrace")
 	p
 		a.link-slide_link(target="_blank" href="https://github.com/cssdream/cssgrace") https://goo.gl/wnNZYz
 
@@ -71,15 +68,15 @@ section.slide.link-slide
 
 section.slide.link-slide
 	h2 postcss-font-magician
-	img(style="max-width: 65%;" src="./img/postcss-font-magician.jpg", alt="postcss-font-magician")
+	img(style="max-width: 65%; box-shadow: 0 0 7px #666;" src="./img/postcss-font-magician.jpg", alt="postcss-font-magician")
 	p
 		a.link-slide_link(target="_blank" href="https://github.com/jonathantneal/postcss-font-magician") https://goo.gl/Q9UJp7
 
 section.slide.link-slide
 	h2 CSS MQPacker
 	.doble
-		img(style="max-width: 32%; vertical-align: top;" src="./img/css-mqpacker1.jpg", alt="css-mqpacker1")
-		img(style="max-width: 32%; vertical-align: top; margin-left: 40px;" src="./img/css-mqpacker2.jpg", alt="css-mqpacker2")
+		img(style="max-width: 32%; vertical-align: top; box-shadow: 0 0 7px #666;" src="./img/css-mqpacker1.jpg", alt="css-mqpacker1")
+		img(style="max-width: 32%; vertical-align: top; margin-left: 110px; box-shadow: 0 0 7px #666;" src="./img/css-mqpacker2.jpg", alt="css-mqpacker2")
 	p
 		a.link-slide_link(target="_blank" href="https://github.com/hail2u/node-css-mqpacker") https://goo.gl/ePNuxX
 
@@ -90,14 +87,14 @@ section.slide.postcss_header-sub2
 section.slide.link-slide
 	h2 PostCSS OverlayGradient
 	a(href="https://codepen.io/alukard/pen/OgKjmo?editors=1100" style="background: none;" target="_blank")
-		img(style="max-width: 70%; box-shadow: 0 0 7px #666;" src="./img/postcss-ovg-example.jpg", alt="postcss-ovg-example")
+		img(style="max-width: 80%; box-shadow: 0 0 7px #666;" src="./img/postcss-ovg-example.jpg", alt="postcss-ovg-example")
 
 section.slide.link-slide
-	h2 astexplorer
-	img(style="max-width: 85%; box-shadow: 0 0 7px #666;" src="./img/astexplorer.jpg", alt="astexplorer")
+	h2
+		a.link-slide_link(target="_blank" href="http://astexplorer.net") http://astexplorer.net
+	img(style="max-width: 95%; box-shadow: 0 0 7px #666;" src="./img/astexplorer2.jpg", alt="astexplorer")
 
 	p
-		a.link-slide_link(target="_blank" href="http://astexplorer.net") http://astexplorer.net
 
 section.slide.link-slide
 	br
@@ -110,41 +107,37 @@ section.slide.link-slide
 		a.link-slide_link(target="_blank" href="http://api.postcss.org") http://api.postcss.org
 
 section.slide
-	p Создать папку в 
+	h2 С чего начать ?
+	p.next Создать папку в 
 		mark node_modules
 
-	p
+	p.next
 		mark postcss-Имя_плагина
-	br
+	//- br
 
-	p Инициализировать её как модуль 
-	pre(style="margin-top:0;")
+	p.next Инициализировать её как модуль 
+	pre.next(style="margin-top:0;")
 		code
 			|npm init --yes
 
 	br
 	br
-	p Создать файл 
+	p.next Создать файл 
 		mark index.js
 
 section.slide
-	p Добавить в index.js 
+	h2 Добавить в index.js 
 
 	pre
-		code
-			|var postcss = require('postcss');
-			|
-			|module.exports = postcss.plugin('mypluginName',
-			//- |
-			|	function myplugin(options) {
-			|		return function (css) {
-			|		options = options || {};
-
-			|			/*Magic*/
-
-			|		}
-
-			|});
+		code.next var postcss = require('postcss');
+		code.next
+			| module.exports = postcss.plugin('mypluginName',
+			|   unction myplugin(options) {
+			|     return function (css) {
+			|     options = options || {};
+			|       /*Magic*/
+			|     }
+			| });
 
 
 section.slide.link-slide
