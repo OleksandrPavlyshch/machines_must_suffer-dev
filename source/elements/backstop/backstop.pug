@@ -15,47 +15,44 @@ section.slide
 
 section.slide
 	h2 Зачем?
-	//- p ¯_| ಠ ∧ ಠ |_/¯
-	p ლ༼ ▀̿ Ĺ̯ ▀̿ ლ༽
+	p ¯_| ಠ ∧ ಠ |_/¯
 
 	ul
-		li У сайта много страниц и состояний для разных устройств
-		li Большая команда и много новичков
-		li Что-то поправил Back-end разработчик
-		li Несколько файлов CSS на один сайт
-		li Один CSS файл на несколько сайтов ( и такое бывает) (o_O)
-		li Вы ведете курсы Front-End разработчиков
+		li.next У сайта много страниц и состояний для разных устройств
+		li.next Большая команда и много новичков
+		li.next Что-то поправил Back-end разработчик
+		li.next Несколько файлов CSS на один сайт
+		li.next Один CSS файл на несколько сайтов ( и такое бывает) (o_O)
+		li.next Вы ведете курсы Front-End разработчиков
 
 section.slide
 	H2 Возможности
-
+	br
 	ul
-		li Можно настроить за пять минут
-		li Имитация действий пользователя через CasperJS
-		li Поддержка двух движков для рендера (PhantomJS и SlimerJS)
-		li Тестирование отдельных блоков
-		li Удаление или скрытие элементов со страницы
-		li Детальные отчеты в браузере и CLI
-		li CI интеграция с JUnit отчетами
-		li Возможность использовать глобально или интегрировать с npm и Gulp
+		li.next Можно настроить за пять минут
+		li.next Тестирование отдельных блоков
+		li.next Удаление или скрытие элементов со страницы
+		li.next Детальные отчеты в браузере и CLI
+		li.next CI интеграция с JUnit отчетами
+		li.next Возможность использовать глобально или интегрировать с npm и Gulp
 
 
 section.slide
 	h2 Использование
 
-	p 
+	p.next
 		mark $ npm install -g backstopjs
 		|  - установка
-	p
+	p.next
 		mark $ backstop genConfig
 		|  - создание базового конфига
-	p 
+	p.next
 		mark $ backstop reference
 		|  - создание эталонной картинки
-	p 
+	p.next
 		mark $ backstop test
 		|  - запуск теста
-	p 
+	p.next
 		mark $ backstop approve
 		|  - замена эталона тестируемой картинкой
 
@@ -69,112 +66,102 @@ section.slide.backstopjs_header-sub1
 section.slide
 	h2(style="margin-bottom: 0 !important") backstop.json
 	pre
-		code
-			|{
-			|	"id": "prod_test",
-			|	"viewports": [...]
-			|	"scenarios": [...]
-			|	"paths": {...}
-			|	"engine": "phantomjs", //- "slimerjs"
-			|	"report": ["browser"], //- "CI"
-			|	"debug": false
-			|}
+		code {
+		code.mark.next   "id": "prod_test",
+		code   "viewports": [...]
+		code   "scenarios": [...]
+		code   "paths": {...}
+		code.mark.next   "engine": "phantomjs", //- "slimerjs"
+		code.mark.next   "report": ["browser"], //- "CI"
+		code.mark.next   "debug": false
+		code }
 
 section.slide
-	h2 Описываем viewports
+	h2 Viewports
 
 	pre
-		code
-			|"viewports": [
-			|	{
-			|		"name": "desctop_mdpi",
-			|		"width": 1280,
-			|		"height": 800
-			|	},
-			|	...
-			|]
+		code "viewports": [
+		code   {
+		code.mark.next     "name": "desctop_mdpi",
+		code.mark.next     "width": 1280,
+		code.mark.next     "height": 800
+		code   },
+		code   ...
+		code ]
 
 section.slide
-	h2 Описываем scenarios
+	h2 Scenarios
 
 	pre
-		code
-			|"label": "main_page",
-			|"scenarios": [
-			|	{
-			|		"url": "website.com",
-			|		"referenceUrl": "stage.website.com",
-			|		//--
-			|		"url": "..local_folder/index.html",
-			|		...
-			|	}
+		code "scenarios": [
+		code   {
+		code.mark.next     "url": "website.com",
+		code.mark.next     "referenceUrl": "stage.website.com",
+		code     //--
+		code.mark.next     "url": "..local_folder/index.html",
+		code     ...
+		code   },
 
 
 section.slide
-	h2 Описываем scenarios
+	h2 Scenarios
 	pre
-		code
-			|	"hideSelectors": [".hide_on_test"],
-			|	"removeSelectors": [".remove_on_test"],
-			|	"selectorExpansion": true,
-			|	"selectors": [
-			|		".hero",
-			|		".portfolio",
-			|		".newsletter",
-			|	],
+		code.mark.next "hideSelectors": [".hide_on_test"],
+		code.mark.next "removeSelectors": [".remove_on_test"],
+		code.mark.next "selectors": [
+		code   ".hero",
+		code   ".portfolio",
+		code   ".newsletter",
+		code ],
 
 
 section.slide
-	h2 Описываем scenarios
+	h2 Scenarios
 	pre
-		code
-			|		"readyEvent": null, // or some event
-			|		"delay": 500,
-			|		"misMatchThreshold" : 0.1,
-			|		"requireSameDimensions" : true,
-			|		"onBeforeScript": "onBefore.js",
-			|		"onReadyScript": "onReady.js"
-			|	}
-			|]
+		code.mark.next     "readyEvent": null, // or some event
+		code.mark.next     "delay": 500,
+		code.mark.next     "misMatchThreshold" : 0.1,
+		code     "onBeforeScript": "onBefore.js",
+		code     "onReadyScript": "onReady.js"
+		code   }
+		code ]
 
 
 section.slide
-	h2 paths
+	h2 Paths
 	pre
-		code
-			|"paths": {
-			|	"bitmaps_reference": "backstop/bitmaps_ref",
-			|	"bitmaps_test": "backstop/bitmaps_test",
-			|	"casper_scripts": "backstop/casper_scripts",
-			|	"html_report": "backstop/html_report",
-			|	"ci_report": "backstop/ci_report"
-			|},
+		code "paths": {
+		code   "bitmaps_reference": "backstop/bitmaps_ref",
+		code   "bitmaps_test": "backstop/bitmaps_test",
+		code   "casper_scripts": "backstop/casper_scripts",
+		code   "html_report": "backstop/html_report",
+		code   "ci_report": "backstop/ci_report"
+		code },
 
 
 section.slide
 	h2 Настройка вывода в браузере
 
 	pre
-		code
-			|"resembleOutputOptions": {
-			|	"errorColor": {
-			|		"red": 255,
-			|		"green": 0,
-			|		"blue": 255
-			|	},
-			|	"transparency": 0.3
-			|}
+		code "resembleOutputOptions": {
+		code   "errorColor": {
+		code     "red": 255,
+		code     "green": 0,
+		code     "blue": 255
+		code   },
+		code   "transparency": 0.3
+		code }
 
 section.slide
 	h2 onBeforeScript, onReadyScript
 
+	br
 	pre
-		code
-			|module.exports = function(casper, scenario, vp) {
-			|	// casper – Casper instance
-			|	// scenario object
-			|	// vp – viewport obj
-			|	};
+		code module.exports = function(casper, scenario, vp) {
+		code 	// casper – Casper instance
+		code 	// scenario object
+		code 	// vp – viewport obj
+		code 	};
 
 section.slide.backstopjs_header-sub2
 	h2.shout DEMO
@@ -183,61 +170,11 @@ section.slide.backstopjs_header-sub3
 	h2.shout А еще варианты?
 
 section.slide
-	h2 Selenuim
+	h2 BackstopJS
 
-	table
-		tr
-			th(scope="row" width="35%") Браузеры
-			td Практически любой браузер
-		tr
-			th(scope="row") Настройка
-			td Долго, если первый раз
-		tr
-			th(scope="row") Простота работы
-			td Написание тестов занимает достаточно много времени
-		tr
-			th(scope="row") Недостатки
-			td Сложно отследить положение и вид элементов на странице. Легко проверить, что элемент есть и он работает.
-		tr
-			th(scope="row") Стоимость
-			td Бесплатно
-
-
-section.slide
-	h2 Gemini
-
-	table
-		tr
-			th(scope="row" width="35%") Браузеры
-			td Браузеры selenium’а и BrowserStack’а
-		tr
-			th(scope="row") Настройка
-			td Долго, если первый раз
-		tr
-			th(scope="row") Простота работы
-			td Сложность работы с инструментом зависит от качества и сложности верстки
-		tr
-			th(scope="row") Недостатки
-			td Высокий барьер входа, некоторые глюки
-		tr
-			th(scope="row") Стоимость
-			td Бесплатно
-
-section.slide
-	h2 BrowserStack
-	table
-		tr
-			th(scope="row" width="35%") Браузеры
-			td Почти все браузеры и устройства
-		tr
-			th(scope="row") Настройка
-			td Просто и быстро
-		tr
-			th(scope="row") Простота работы
-			td Просто
-		tr
-			th(scope="row") Недостатки
-			td Денег стоит ୧( ಠ Д ಠ )୨
-		tr
-			th(scope="row") Стоимость
-			td 99$ в месяц за неограниченное количество тестов
+	br
+	ul
+		li.next Быстро настраивается
+		li.next Тестирование отдельных блоков
+		li.next Выполнение сценариев пользователя через Casper JS
+		li.next CI интеграция 
