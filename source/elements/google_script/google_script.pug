@@ -24,24 +24,24 @@ section.slide.link-slide
 
 section.slide
 	br
+	br
+	br
 	pre
-		code
-			|function getData() {
-			|	var sheet = SpreadsheetApp.getActiveSheet(),
-			|	data = sheet.getDataRange().getValues();
-			|	return data;
-			|}
+		code function getData() {
+		code.mark.next   var sheet = SpreadsheetApp.getActiveSheet(),
+		code.mark.next   data = sheet.getDataRange().getValues();
+		code   return data;
+		code }
 
 section.slide
 	pre
-		code
-			|function onOpen() {
-			|	var ui = SpreadsheetApp.getUi();
-			|	ui.createMenu('Export Products')
-			|		.addItem('Export to XML', 'exportToXML')
-			|		.addToUi();
-			|}
-			|function exportToXML() {
-			|	var data = getData();
-			|	/*Magic*/
-			|}
+		code function onOpen() {
+		code.mark.next   var ui = SpreadsheetApp.getUi();
+		code.mark.next   ui.createMenu('Export Products')
+		code.mark.next     .addItem('Export to XML', 'exportToXML')
+		code.mark.next     .addToUi();
+		code }
+		code function exportToXML() {
+		code.mark.next   var data = getData();
+		code.mark.next   /*Magic*/
+		code }
