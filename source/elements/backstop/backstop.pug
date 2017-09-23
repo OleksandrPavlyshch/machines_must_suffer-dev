@@ -16,7 +16,6 @@ section.slide
 section.slide
 	h2 Зачем?
 	p ¯_| ಠ ∧ ಠ |_/¯
-
 	ul
 		li.next У сайта много страниц и состояний для разных устройств
 		li.next Большая команда и много новичков
@@ -27,7 +26,7 @@ section.slide
 
 section.slide
 	H2 Возможности
-	br
+
 	ul
 		li.next Можно настроить за пять минут
 		li.next Тестирование отдельных блоков
@@ -82,7 +81,7 @@ section.slide
 	pre
 		code "viewports": [
 		code   {
-		code.mark.next     "name": "desctop_mdpi",
+		code.mark.next     "name": "desktop_mdpi",
 		code.mark.next     "width": 1280,
 		code.mark.next     "height": 800
 		code   },
@@ -138,30 +137,16 @@ section.slide
 		code   "ci_report": "backstop/ci_report"
 		code },
 
-
-section.slide
-	h2 Настройка вывода в браузере
-
-	pre
-		code "resembleOutputOptions": {
-		code   "errorColor": {
-		code     "red": 255,
-		code     "green": 0,
-		code     "blue": 255
-		code   },
-		code   "transparency": 0.3
-		code }
-
 section.slide
 	h2 onBeforeScript, onReadyScript
 
 	br
 	pre
 		code module.exports = function(casper, scenario, vp) {
-		code 	// casper – Casper instance
-		code 	// scenario object
-		code 	// vp – viewport obj
-		code 	};
+		code   // casper – Casper instance
+		code   // scenario object
+		code   // vp – viewport obj
+		code   };
 
 section.slide.backstopjs_header-sub2
 	h2.shout DEMO
